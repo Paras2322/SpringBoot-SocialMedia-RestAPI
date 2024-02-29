@@ -1,0 +1,42 @@
+# Actuator
+management:
+  server:
+    port: 8282
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+
+# Database JPA
+spring:
+  datasource:
+    name: socialmedia
+    url: jdbc:mysql://localhost:3306/socialmedia
+    username: root
+    password: SecureParas@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+  security:
+    user:
+      name: username
+      password: password
+
+# Swagger
+springdoc:
+  swagger-ui:
+    path: /custom-swagger-ui
+
+# Internationalization
+messages:
+  basename: messages
+  encoding: UTF-8
+
